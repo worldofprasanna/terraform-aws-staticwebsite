@@ -1,1 +1,3 @@
 .terraform/
+plan.out
+terraform.tfstate
