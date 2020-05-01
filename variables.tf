@@ -32,3 +32,8 @@ variable "aws_region" {
   description = "AWS Region"
   default     = "us-east-1"
 }
+
+variable "route53_domain" {
+  type        = string
+  description = "Route53 hostedzone name"
+}
