@@ -8,6 +8,8 @@ resource "aws_s3_bucket" "main" {
     error_document = var.error_document
   }
 
+  force_destroy = var.s3_force_destroy
+
   tags = {
     "Name" = var.bucket_name
   }
