@@ -6,20 +6,29 @@
 
 ## Table of Contents
 
-- [Install](#install)
-- [Usage](#usage)
-- [Maintainers](#maintainers)
-- [Contributing](#contributing)
-- [License](#license)
+- [static-site-s3](#static-site-s3)
+  - [Table of Contents](#table-of-contents)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Maintainers](#maintainers)
+  - [Contributing](#contributing)
+  - [License](#license)
 
 ## Install
 
 ```
+brew install terraform
 ```
 
 ## Usage
 
+To plan the infrastructure,
 ```
+terraform plan --out plan.out -var-file=sample.tfvars
+```
+To create the infrastructure,
+```
+terraform apply plan.out
 ```
 
 ## Maintainers
