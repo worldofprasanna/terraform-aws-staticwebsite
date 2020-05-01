@@ -33,3 +33,17 @@ data "aws_iam_policy_document" "bucket_policy" {
     }
   }
 }
+
+resource "aws_s3_bucket_object" "index" {
+  bucket = var.bucket_name
+  key    = "index.html"
+  source = "sample/index.html"
+  content_type = "text/html"
+}
+
+resource "aws_s3_bucket_object" "error" {
+  bucket = var.bucket_name
+  key    = "error.html"
+  source = "sample/error.html"
+  content_type = "text/html"
+}
