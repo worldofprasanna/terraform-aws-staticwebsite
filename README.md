@@ -19,17 +19,22 @@
 ```
 brew install terraform
 ```
+Make sure that you have added the proper permission to create resources in AWS.
 
 ## Usage
 
-To plan the infrastructure,
+This terraform module can be used with minimal configuration as follow,
+
 ```
-terraform plan --out plan.out -var-file=sample.tfvars
+module "website" {
+  source = "github.com/worldofprasanna/static-site-s3"
+  bucket_name = "yourdomain.com"
+  route53_domain = "yourdomain.com"
+}
 ```
-To create the infrastructure,
-```
-terraform apply plan.out
-```
+Note: Please ensure that you have added the Route53 Nameservers to your Domain Registrar (say: Godaddy etc)
+
+You can find more exampes [here](examples/main.tf)
 
 ## Maintainers
 
