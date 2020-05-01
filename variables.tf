@@ -21,6 +21,12 @@ variable "error_document" {
   default     = "error.html"
 }
 
+variable "secret_user_agent" {
+  type        = string
+  description = "secret to authenticate CF requests to s3"
+  default     = "SECRET-STRING"
+}
+
 variable "aws_region" {
   type        = string
   description = "AWS Region"
