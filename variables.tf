@@ -27,12 +27,6 @@ variable "secret_user_agent" {
   default     = "SECRET-STRING"
 }
 
-variable "aws_region" {
-  type        = string
-  description = "AWS Region"
-  default     = "us-east-1"
-}
-
 variable "route53_domain" {
   type        = string
   description = "Route53 hostedzone name"
