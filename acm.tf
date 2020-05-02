@@ -1,5 +1,5 @@
 resource "aws_acm_certificate" "cert" {
-  domain_name       = "${var.bucket_name}"
+  domain_name       = "${local.bucket_name}"
   validation_method = "DNS"
 }
 

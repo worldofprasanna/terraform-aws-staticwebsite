@@ -1,5 +1,9 @@
+locals {
+  bucket_name = var.bucket_name != "" ? var.bucket_name : var.domain
+}
+
 resource "aws_s3_bucket" "main" {
-  bucket   = var.bucket_name
+  bucket   = local.bucket_name
   acl      = "private"
   policy   = data.aws_iam_policy_document.bucket_policy.json
 
@@ -11,7 +15,7 @@ resource "aws_s3_bucket" "main" {
   force_destroy = var.s3_force_destroy
 
   tags = {
-    "Name" = var.bucket_name
+    "Name" = local.bucket_name
   }
 }
 
@@ -24,7 +28,7 @@ data "aws_iam_policy_document" "bucket_policy" {
     ]
 
     resources = [
-      "arn:aws:s3:::${var.bucket_name}/*",
+      "arn:aws:s3:::${local.bucket_name}/*",
     ]
 
     principals {
@@ -34,15 +38,16 @@ data "aws_iam_policy_document" "bucket_policy" {
   }
 }
 
+# Refactor it to use loop
 resource "aws_s3_bucket_object" "index" {
-  bucket = var.bucket_name
+  bucket = local.bucket_name
   key    = "index.html"
   source = "sample/index.html"
   content_type = "text/html"
 }
 
 resource "aws_s3_bucket_object" "error" {
-  bucket = var.bucket_name
+  bucket = local.bucket_name
   key    = "error.html"
   source = "sample/error.html"
   content_type = "text/html"

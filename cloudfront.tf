@@ -2,7 +2,7 @@ resource "aws_cloudfront_distribution" "main" {
   http_version = "http2"
 
   origin {
-    origin_id   = "origin-${var.bucket_name}"
+    origin_id   = "origin-${local.bucket_name}"
     domain_name = aws_s3_bucket.main.website_endpoint
 
     custom_origin_config {
@@ -21,7 +21,7 @@ resource "aws_cloudfront_distribution" "main" {
   enabled             = true
   default_root_object = var.index_document
 
-  aliases = concat([var.bucket_name])
+  aliases = concat([local.bucket_name])
 
   restrictions {
     geo_restriction {
@@ -30,7 +30,7 @@ resource "aws_cloudfront_distribution" "main" {
   }
 
   default_cache_behavior {
-    target_origin_id = "origin-${var.bucket_name}"
+    target_origin_id = "origin-${local.bucket_name}"
     allowed_methods  = ["GET", "HEAD"]
     cached_methods   = ["GET", "HEAD"]
     compress         = true

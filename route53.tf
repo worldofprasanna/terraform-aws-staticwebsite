@@ -1,10 +1,14 @@
+locals {
+  route53_domain = var.route53_domain != "" ? var.route53_domain : var.domain
+}
+
 resource "aws_route53_zone" "main" {
   name         = "${var.route53_domain}"
 }
 
 resource "aws_route53_record" "app" {
   zone_id  = "${aws_route53_zone.main.zone_id}"
-  name     = "${var.bucket_name}"
+  name     = "${local.bucket_name}"
   type     = "A"
 
   alias {
