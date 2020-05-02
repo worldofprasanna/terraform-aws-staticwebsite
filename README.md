@@ -34,7 +34,7 @@ module "website" {
 ```
 Note: Please ensure that you have added the Route53 Nameservers to your Domain Registrar (say: Godaddy etc)
 
-You can find more exampes [here](examples/main.tf)
+You can find the actual example [here](examples/main.tf)
 
 ## Maintainers
 
