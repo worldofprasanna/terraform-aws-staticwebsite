@@ -1,6 +1,6 @@
 # Simple website serving at naked domain / www. subdomain
 module "website" {
-  source = "github.com/worldofprasanna/static-site-s3"
+  source = "github.com/worldofprasanna/terraform-aws-staticwebsite"
   bucket_name = "streakr.club"
   route53_domain = "streakr.club"
 }

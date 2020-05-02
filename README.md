@@ -1,4 +1,4 @@
-# static-site-s3
+# terraform-aws-staticwebsite
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-- [static-site-s3](#static-site-s3)
+- [terraform-aws-staticwebsite](#terraform-aws-staticwebsite)
   - [Table of Contents](#table-of-contents)
   - [Install](#install)
   - [Usage](#usage)
@@ -27,14 +27,14 @@ This terraform module can be used with minimal configuration as follow,
 
 ```
 module "website" {
-  source = "github.com/worldofprasanna/static-site-s3"
+  source = "github.com/worldofprasanna/terraform-aws-staticwebsite"
   bucket_name = "yourdomain.com"
   route53_domain = "yourdomain.com"
 }
 ```
 Note: Please ensure that you have added the Route53 Nameservers to your Domain Registrar (say: Godaddy etc)
 
-You can find the actual example [here](examples/main.tf)
+You can find the actual example [here](examples/simple_website/README.md)
 
 ## Maintainers
 
