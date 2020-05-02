@@ -2,8 +2,8 @@
 module "website" {
   source  = "worldofprasanna/staticwebsite/aws"
   version = "1.0.0"
-  bucket_name = "streakr.club"
-  route53_domain = "streakr.club"
+  domain = "streakr.club"
+  s3_force_destroy = "true"
 }
 
 variable "aws_region" {
