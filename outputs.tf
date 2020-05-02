@@ -9,3 +9,7 @@ output "cloudfront_domain" {
 output "cloudfront_hosted_zone" {
   value = aws_cloudfront_distribution.main.*.hosted_zone_id
 }
+
+# output "route53_nameservers" {
+#   value = aws_route53_zone.dev.name_servers.*
+# }

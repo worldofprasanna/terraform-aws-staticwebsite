@@ -3,7 +3,7 @@ locals {
 }
 
 resource "aws_route53_zone" "main" {
-  name         = "${var.route53_domain}"
+  name         = "${local.route53_domain}"
 }
 
 resource "aws_route53_record" "app" {
