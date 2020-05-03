@@ -1,4 +1,4 @@
-name: 'CI Pipeline'
+name: 'CI_Pipeline'
 on:
   push:
     branches:
@@ -15,8 +15,23 @@ jobs:
         with:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: 'fmt'
+      - name: 'Init the terraform code'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.12.24
+          tf_actions_subcommand: 'init'
       - name: 'Validate the terraform code'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: 'validate'
+      - name: 'Plan the infrastructure'
+        uses: hashicorp/terraform-github-actions@master
+        with:
+          tf_actions_version: 0.12.24
+          tf_actions_subcommand: 'plan'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+          TF_VAR_domain: 'testdomain.com'
