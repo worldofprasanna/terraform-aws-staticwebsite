@@ -26,15 +26,15 @@ Make sure that you have added the proper permission to create resources in AWS.
 This terraform module can be used with minimal configuration as follow,
 
 ```
-module "website" {
-  source = "github.com/worldofprasanna/terraform-aws-staticwebsite"
-  bucket_name = "yourdomain.com"
-  route53_domain = "yourdomain.com"
+module "staticwebsite" {
+  source  = "worldofprasanna/staticwebsite/aws"
+  version = "1.0.0"
+  domain = "yourdomain.com"
 }
 ```
 Note: Please ensure that you have added the Route53 Nameservers to your Domain Registrar (say: Godaddy etc)
 
-You can find the actual example [here](examples/simple_website/README.md)
+You can find the actual examples [here](examples/README.md)
 
 ## Maintainers
 
