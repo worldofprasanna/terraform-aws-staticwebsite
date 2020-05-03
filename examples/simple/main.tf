@@ -2,7 +2,7 @@
 module "website" {
   source  = "worldofprasanna/staticwebsite/aws"
   version = "1.0.0"
-  domain = var.domain
+  domain  = var.domain
 }
 
 # AWS Specific variables

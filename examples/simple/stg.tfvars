@@ -1,1 +1,1 @@
-domain="streakr.club"
+domain = "streakr.club"
