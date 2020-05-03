@@ -1,6 +1,7 @@
 # terraform-aws-staticwebsite
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+![git-tag](https://img.shields.io/github/v/tag/worldofprasanna/terraform-aws-staticwebsite)
 
 > Terraform module to host SPA UI application in AWS S3
 
