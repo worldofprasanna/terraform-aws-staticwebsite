@@ -4,6 +4,9 @@
 
 > Terraform module to host SPA UI application in AWS S3
 
+You can read about the blog post [here](https://blog.francium.tech/how-to-serve-your-website-from-aws-s3-using-terraform-94dfd16324bf).
+Note: If you find the blog/code useful, please add a clap in medium / star the github repo. Thanks in advance !!
+
 ## Table of Contents
 
 - [terraform-aws-staticwebsite](#terraform-aws-staticwebsite)
