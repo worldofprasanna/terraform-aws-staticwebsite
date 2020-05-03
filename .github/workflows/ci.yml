@@ -3,8 +3,10 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches: [ master ]
 jobs:
-  terraform:
+  linter:
     name: 'Run basic sanity checks'
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +27,7 @@ jobs:
         with:
           tf_actions_version: 0.12.24
           tf_actions_subcommand: 'validate'
-      - name: 'Plan the infrastructure'
+      - name: 'Plan the terraform code'
         uses: hashicorp/terraform-github-actions@master
         with:
           tf_actions_version: 0.12.24
