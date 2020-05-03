@@ -11,11 +11,16 @@ Note: If you find the blog/code useful, please add a clap in medium / star the g
 
 - [terraform-aws-staticwebsite](#terraform-aws-staticwebsite)
   - [Table of Contents](#table-of-contents)
+  - [Infrastructure](#infrastructure)
   - [Install](#install)
   - [Usage](#usage)
   - [Maintainers](#maintainers)
   - [Contributing](#contributing)
   - [License](#license)
+
+## Infrastructure
+
+![infrastructure](Infrastructure.png)
 
 ## Install
 
