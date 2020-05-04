@@ -18,6 +18,7 @@ Note: If you find the blog/code useful, please add a clap in medium / star the g
   - [Infrastructure](#infrastructure)
   - [Install](#install)
   - [Usage](#usage)
+  - [Todo List](#todo-list)
   - [Maintainers](#maintainers)
   - [Contributing](#contributing)
   - [License](#license)
@@ -47,6 +48,13 @@ module "staticwebsite" {
 Note: Please ensure that you have added the Route53 Nameservers to your Domain Registrar (say: Godaddy etc)
 
 You can find the actual examples [here](examples/README.md)
+
+## Todo List
+
+- Skip the Route53 creation, if not needed
+- Add examples to host the subdomain
+- Add tests using Terratest
+- Add contribution guidelines & Issue templates
 
 ## Maintainers
 
